@@ -1,0 +1,270 @@
+#contactPage {
+    min-height: calc(100vh - 4rem);
+    width: 100vw;
+    max-width: 60rem;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact {
+    scroll-margin-top: 5rem;
+}
+
+/* =====================
+   TITLES
+===================== */
+
+.contactPageTitle {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.TechnologyDesc {
+    font-weight: 300;
+    font-size: 1rem;
+    max-width: 48rem;
+}
+
+/* =====================
+   TECHNOLOGY GRID
+===================== */
+
+.TechnologyImgs {
+    margin: 2.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.4rem;
+}
+
+.techItem {
+    position: relative;
+    width: 78px;
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.TechnologyImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 0.6rem;
+    border-radius: 14px;
+    background: #ffffff;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.techItem:hover .TechnologyImg {
+    transform: translateY(-6px) scale(1.08);
+}
+
+/* =====================
+   TOOLTIP
+===================== */
+
+.techTooltip {
+    position: absolute;
+    bottom: -3.8rem;
+    left: 50%;
+    transform: translateX(-50%) scale(0.95);
+    width: 190px;
+    background: rgba(15, 12, 12, 0.96);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.55rem 0.7rem;
+    border-radius: 8px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(17, 17, 17, 0.7);
+    z-index: 20;
+}
+
+.techTooltip::after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent rgba(51, 51, 51, 0.96) transparent;
+}
+
+.techItem:hover .techTooltip {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+/* =====================
+   GLOW COLORS
+===================== */
+
+.techItem[data-tech="python"]:hover .TechnologyImg { box-shadow: 0 0 22px rgba(255, 212, 59, 0.6); }
+.techItem[data-tech="pytorch"]:hover .TechnologyImg { box-shadow: 0 0 22px rgba(238, 76, 44, 0.6); }
+.techItem[data-tech="aws"]:hover .TechnologyImg { box-shadow: 0 0 22px rgba(255, 153, 0, 0.6); }
+.techItem[data-tech="sklearn"]:hover .TechnologyImg { box-shadow: 0 0 22px rgba(249, 168, 37, 0.6); }
+.techItem[data-tech="java"]:hover .TechnologyImg { box-shadow: 0 0 22px rgba(244, 67, 54, 0.6); }
+.techItem[data-tech="linux"]:hover .TechnologyImg { box-shadow: 0 0 22px rgba(255, 255, 255, 0.45); }
+.techItem[data-tech="node"]:hover .TechnologyImg { box-shadow: 0 0 22px rgba(83, 158, 67, 0.6); }
+.techItem[data-tech="mongo"]:hover .TechnologyImg { box-shadow: 0 0 22px rgba(76, 175, 80, 0.6); }
+.techItem[data-tech="git"]:hover .TechnologyImg { box-shadow: 0 0 22px rgba(240, 80, 51, 0.6); }
+.techItem[data-tech="react"]:hover .TechnologyImg { box-shadow: 0 0 22px rgba(97, 218, 251, 0.6); }
+.techItem[data-tech="spark"]:hover .TechnologyImg { box-shadow: 0 0 22px rgba(229, 68, 48, 0.6); }
+.techItem[data-tech="sql"]:hover .TechnologyImg { box-shadow: 0 0 22px rgba(0, 120, 215, 0.6); }
+.techItem[data-tech="intellij"]:hover .TechnologyImg { box-shadow: 0 0 22px rgba(171, 71, 188, 0.6); }
+.techItem[data-tech="vscode"]:hover .TechnologyImg { box-shadow: 0 0 22px rgba(0, 122, 204, 0.6); }
+
+/* =====================
+   MOBILE SAFETY
+===================== */
+
+@media (max-width: 768px) {
+    .techTooltip {
+        width: 165px;
+        font-size: 0.7rem;
+        bottom: -3.4rem;
+    }
+}
+
+/* =====================
+   CONTACT FORM
+===================== */
+
+#Technologys {
+    padding: 2rem;
+}
+
+.contactDesc {
+    padding: 1rem;
+    font-size: medium;
+    font-weight: 300;
+}
+
+.contactForm {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    max-width: 60rem;
+}
+
+.name, .email, .msg {
+    font-size: medium;
+    width: 100%;
+    max-width: 40rem;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    background: rgb(40, 40, 40);
+}
+
+.submitBtn {
+    background: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.75rem 3.5rem;
+    border-radius: 0.7rem;
+    margin: 2rem;
+}
+
+.submitBtn:hover {
+    border: 4px solid rgb(78, 17, 135);
+}
+
+/* =====================
+   CONTACT ICONS
+===================== */
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.link {
+    width: 4.5rem;
+    height: 4.5rem;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.link:hover {
+    transform: translateY(-6px) scale(1.08);
+    opacity: 0.9;
+}
+
+/* =====================
+   INFO DISPLAY
+===================== */
+
+.contactInfo {
+    margin-top: 1rem;
+    padding: 0.75rem 1.2rem;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+.infoText {
+    font-size: 0.95rem;
+    color: #eaeaea;
+    word-break: break-all;
+}
+
+.copyStatus {
+    position: absolute;
+    top: -1.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    color: #4ade80;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.copyStatus.show {
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.notification {
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #4dd151;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.notification.error {
+    background-color: #ee3022;
+}
